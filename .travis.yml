@@ -18,9 +18,9 @@ before_script:
 - cp local_settings.example.py local_settings.py
 - psql -c "create user decide with password 'decide'"
 - psql -c "create database decide owner decide"
-- python ./decide/manage.py makemigrations
-- python ./decide/manage.py migrate
+- python3 ./decide/manage.py makemigrations
+- python3 ./decide/manage.py migrate
 script: 
-- python ./decide/manage.py test
+- python3 ./decide/manage.py test
 
 

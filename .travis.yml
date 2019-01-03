@@ -1,6 +1,9 @@
 language: python 
 python: 
-- "3.6"
+- 3.6
+sudo: required
+addons:
+  postgresql: "9.6"
 services:
 - postgresql
 env: 
@@ -15,8 +18,9 @@ before_script:
 - cp local_settings.example.py local_settings.py
 - psql -c "create user decide with password 'decide'"
 - psql -c "create database decide owner decide"
-- python manage.py migrate
+- python ./decide/manage.py makemigrations
+- python ./decide/manage.py migrate
 script: 
-- python manage.py test
-addons:
-  postgresql: "9.6"
+- python ./decide/manage.py test
+
+

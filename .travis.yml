@@ -1,9 +1,6 @@
 language: python 
 python: 
 - 3.6
-sudo: required
-addons:
-  postgresql: "9.6"
 services:
 - postgresql
 env: 
@@ -14,16 +11,14 @@ before_install:
 - cd decide
 install: 
 - pip install -r ../requirements.txt
-
-
-before_script:
-  - cp local_settings.example.py local_settings.py
-  - psql -c "create user decide with password 'decide'" -U postgres
-  - psql -c "create database decide owner decide" -U postgres
-
-script:
-  - python ./decide/manage.py makemigrations
-  - python ./decide/manage.py migrate
-  - python ./decide/manage.py test ./decide
+before_script: 
+- cp local_settings.example.py local_settings.py
+- psql -c "create user decide with password 'decide'"
+- psql -c "create database decide owner decide"
+- python manage.py migrate
+script: 
+- python manage.py test
+addons:
+  postgresql: "9.6"
 
 

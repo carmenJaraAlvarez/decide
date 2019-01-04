@@ -6,12 +6,16 @@ python:
 services:
 - postgresql
 env: 
-- DJANGO=2.0 DB=postgres
+- DJANGO_VERSION=2.0 DB=postgres
+- DJANGO_VERSION=1.10.8 DB=postgres
+- DJANGO_VERSION=1.11.5 DB=postgres
 global:
   - PGPORT=5432
 before_install: 
 - cd decide
 install: 
+- pip install -q Django==$DJANGO_VERSION
+- python setup.py -q install
 - pip install -r ../requirements.txt
 before_script: 
 - psql -c "create user decide with password 'decide'"

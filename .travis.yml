@@ -1,14 +1,10 @@
 language: python 
 python: 
 - "3.6"
-- "3.3"
-- "2.7"
 services:
 - postgresql
 env: 
 - DJANGO_VERSION=2.0 DB=postgres
-- DJANGO_VERSION=1.10.8 DB=postgres
-- DJANGO_VERSION=1.11.5 DB=postgres
 global:
   - PGPORT=5432
 before_install: 

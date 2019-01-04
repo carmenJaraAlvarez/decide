@@ -19,6 +19,12 @@ script:
 - python manage.py test
 addons:
   postgresql: "9.6"
-notifications: always
+notifications:
+  email:
+    recipients:
+      - mcarmenjara@gmail.com
+      - carjaralv@alum.us.es
+    on_success: always # default: change
+    on_failure: always # default: always
 
 

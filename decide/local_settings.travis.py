@@ -1,6 +1,5 @@
 ALLOWED_HOSTS = ["*"]
 
-# Modules in use, commented modules that you won't use
 MODULES = [
     'authentication',
     'base',
@@ -30,8 +29,8 @@ BASEURL = 'http://localhost:8000'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
+        'NAME': 'decide',
+        'USER': 'decide',
         'HOST': 'localhost',
         'PORT': '5432',
     }

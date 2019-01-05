@@ -162,4 +162,4 @@ except ImportError:
 INSTALLED_APPS = INSTALLED_APPS + MODULES
 
 import django_heroku
-django_heroku.settings(locals())
+django_heroku.settings(locals(), test_runner=False)

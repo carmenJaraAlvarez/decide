@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/carmenJaraAlvarez/decide.svg?branch=master)](https://travis-ci.org/carmenJaraAlvarez/decide)
 
 Plataforma voto electrónico educativa
 =====================================

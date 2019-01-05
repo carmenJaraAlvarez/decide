@@ -68,8 +68,8 @@ MODULES = [
     'voting',
 ]
 
-#BASEURL = 'https://decidepropio.herokuapp.com'
-BASEURL = 'http://localhost:8000/'
+BASEURL = 'https://decidepropio.herokuapp.com'
+#BASEURL = 'http://localhost:8000/'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -129,7 +129,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+APIS = {}
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
@@ -161,5 +161,5 @@ except ImportError:
 
 INSTALLED_APPS = INSTALLED_APPS + MODULES
 
-# import django_heroku
-# django_heroku.settings(locals())
+import django_heroku
+django_heroku.settings(locals())
